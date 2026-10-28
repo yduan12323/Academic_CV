@@ -1,0 +1,100 @@
+% Academic CV (v3, 2026-10-26) for CSC-funded visiting Ph.D. applications
+% Style: clean, single-column American academic CV, inspired by Clean Academic CV.
+% Compile with: pdflatex main.tex (twice)
+\documentclass[10.6pt,letterpaper]{article}
+\usepackage[margin=0.78in,top=0.72in,bottom=0.74in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{tgtermes}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{fancyhdr}
+\definecolor{darkblue}{HTML}{233C56}
+\definecolor{muted}{HTML}{46515C}
+\definecolor{linkblue}{HTML}{165DAA}
+\hypersetup{colorlinks=true, linkcolor=linkblue, urlcolor=linkblue, citecolor=linkblue}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{2em}
+\linespread{1.045}
+\titleformat{\section}{\large\bfseries\color{darkblue}}{}{0pt}{}[\vspace{-3pt}\color{darkblue}\rule{\linewidth}{0.45pt}]
+\titlespacing*{\section}{0pt}{12pt}{7pt}
+\setlist[itemize]{leftmargin=1.3em,topsep=3pt,parsep=1.5pt,itemsep=2.6pt}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\color{muted}\footnotesize Yu Duan \quad\textbar\quad Academic CV \quad\textbar\quad \thepage}
+\setlength{\footskip}{24pt}
+\newcommand{\rtime}[1]{{\small\color{muted}#1}}
+\newcommand{\papertitle}[1]{\emph{#1}}
+\newcommand{\researchitem}[1]{\par\hangindent=1.2em\hangafter=1 #1\par\vspace{5pt}}
+\begin{document}
+\begin{center}
+{\fontsize{22}{25}\selectfont\bfseries Yu Duan}\\[4pt]
+{\small Ph.D. Student in Transportation Planning and Management}\\[3pt]
+{\small School of Traffic and Transportation, Beijing Jiaotong University, Beijing, China}\\[3pt]
+{\small\href{mailto:duanyu@bjtu.edu.cn}{duanyu@bjtu.edu.cn}\quad \textbar\quad \href{https://scholar.google.com/citations?user=pLcJk40AAAAJ}{Google Scholar}}
+\end{center}
+\vspace{-3pt}
+
+\section*{Research Interests}
+Data-driven operations management; mobility-on-demand platforms; decision-focused learning; dynamic fleet rebalancing; probabilistic demand modeling; uncertainty-aware decision-making.
+
+\section*{Education}
+\begin{tabularx}{\linewidth}{@{}Xr@{}}
+\textbf{Beijing Jiaotong University}, Beijing, China & \rtime{Sep 2024 -- Jun 2029 (expected)}\\
+\end{tabularx}
+Ph.D. in \textbf{Transportation Planning and Management} (direct-entry Ph.D. program)\\
+School of Traffic and Transportation\\
+Advisor: Prof. Xuedong Yan; Co-advisor: Assoc. Prof. Xiaobing Liu
+\vspace{7pt}
+
+\begin{tabularx}{\linewidth}{@{}Xr@{}}
+\textbf{Beijing Jiaotong University}, Beijing, China & \rtime{Sep 2020 -- Jun 2024}\\
+\end{tabularx}
+\textbf{Bachelor of Engineering in Transportation}\\
+Jeme Tienyow Honors College; undergraduate focus in Intelligent Transportation\\
+Minor: Artificial Intelligence (minor bachelor's degree)
+% Official bachelor's major on the diploma: Transportation (not Intelligent Transportation).
+% Verify precise English phrase printed on the minor degree certificate if available.
+
+\section*{Peer-Reviewed Journal Articles}
+\researchitem{\textbf{Duan, Y.}, Liu, X., Geng, Y.-L., Xu, G., Wang, Y., \& Yan, X. (2026). \papertitle{Uncertainty-aware deep multi-graph learning approach coupling zero-inflated Generalized Poisson for ridesharing demand prediction}. \textbf{Information Sciences}, 728, 122820. \href{https://doi.org/10.1016/j.ins.2025.122820}{doi:10.1016/j.ins.2025.122820}.}
+\researchitem{Liu, X., \textbf{Duan, Y.}, Geng, Y.-L., Wang, Y., Li, Q., Yan, X., \& Gao, Z. (2026). \papertitle{Uncertainty quantification for joint demand prediction of multi-modal ride-sourcing services using spatiotemporal Mixture-of-Expert neural network}. \textbf{Transportation Research Part C: Emerging Technologies}, 184, 105507. \href{https://doi.org/10.1016/j.trc.2025.105507}{doi:10.1016/j.trc.2025.105507}. \textit{(Corresponding author; \href{https://github.com/yduan12323/MoE-UQ-Refactored}{Code is available on GitHub})}}
+\researchitem{Sun, Y., Liu, X., \textbf{Duan, Y.}, Wang, Y., Zhang, C., \& Yan, X. (2026). \papertitle{No impact without details: Quasi-experimental evidence on carpooling regulations and usage}. \textbf{Transportation Research Part A: Policy and Practice}, 213, 105224. \href{https://doi.org/10.1016/j.tra.2026.105224}{doi:10.1016/j.tra.2026.105224}.}
+
+\section*{Manuscripts Under Review}
+\researchitem{\textbf{Duan, Y.}, Liu, X., Sun, Y., Leng, Y., Yan, X., Wang, Y., \& Gao, Z. \papertitle{Network-Wide Travel Time Inference from Sparse Endpoint Data under Reporting Latency: A Closed-Loop Latent Dynamics Framework}. \textbf{Transportation Research Part C: Emerging Technologies}. Revised manuscript under review following major revision.}
+\researchitem{\textbf{Duan, Y.}, Yan, X., Liu, X., Sun, Y., \& Leng, Y. \papertitle{Learning Operational Targets for Dynamic Fleet Rebalancing}. Manuscript under review at \textbf{Manufacturing \& Service Operations Management}.}
+\vspace{2pt}\textit{Manuscripts available upon request.}
+
+\newpage
+\section*{Selected Research Contributions}
+\begin{itemize}
+\item \textbf{Decision-aware fleet rebalancing:} Designed an operational-target learning framework that trains vehicle-coverage decisions using delayed service and vehicle-reuse outcomes; combined counterfactual replay with selected-basis LP sensitivity, preserving exact integer-feasible network-flow execution.
+\item \textbf{Probabilistic platform demand modeling:} Developed models for sparse and correlated ride-sourcing demand using zero-inflated count distributions and noncrossing multi-quantile forecasts; evaluated predictive accuracy and uncertainty calibration on operational trip data.
+\item \textbf{Transportation network inference:} Developed a closed-loop framework to infer network-wide origin--destination travel times from incomplete and delayed endpoint observations using low-rank representations, latent dynamics, and adaptive filtering.
+\end{itemize}
+
+\section*{Conference Presentation}
+\textbf{Duan, Y.} (Aug 2026). \papertitle{Learning Operational Targets for Ride-hailing Rebalancing}. Conference presentation, \textbf{17th International Workshop on Computational Transportation Science (CTS 2026)}, Changsha, China.
+
+\section*{Teaching Experience}
+\textbf{Teaching Assistant}, \emph{Academic Writing and Communication} (undergraduate course), Beijing Jiaotong University. Provided individual feedback and one-on-one guidance on students' academic writing and manuscript revisions.
+
+\section*{Honors \& Awards}
+\begin{itemize}
+\item \textbf{National Bronze Award} (team), 9th China International ``Internet+'' College Students' Innovation and Entrepreneurship Competition (2023).
+\item \textbf{First Prize} (team), Beijing regional round of the same competition (2023).
+\end{itemize}
+
+\section*{Methods \& Computational Skills}
+\textbf{Operations research:} Linear programming, network-flow optimization, total unimodularity, simplex methods, selected-basis LP sensitivity analysis.\\[2pt]
+\textbf{Learning and statistical modeling:} Decision-focused learning, probabilistic forecasting, deep learning, spatiotemporal modeling, uncertainty quantification.\\[2pt]
+\textbf{Programming and software:} Python (PyTorch, NumPy, SciPy); HiGHS via \texttt{highspy}.
+
+\end{document}

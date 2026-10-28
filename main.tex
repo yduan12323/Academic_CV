@@ -1,0 +1,103 @@
+% Academic CV for Yu Duan.
+% Adapted from Matthew DeVerna's 2024 CV template (based on Hause Lin's CV).
+% Content: my/Academic_CV.tex, supplied 2026-10-26.
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[backend=biber,maxnames=20,style=nature,doi=true,sorting=none,defernumbers=true]{biblatex}
+\addbibresource{ref.bib}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{ragged2e}
+\usepackage{kpfonts}
+\usepackage[T1]{fontenc}
+\usepackage{xcolor}
+\input{colors.tex}
+\usepackage{hyperref}
+\usepackage{bookmark}
+\urlstyle{same}
+\usepackage{needspace}
+\usepackage{titlesec}
+\usepackage{enumitem}
+% Keep the template's heading typography; tighten only vertical spacing.
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+\setlist[itemize]{leftmargin=1.3em,topsep=2pt,itemsep=4pt,parsep=0pt}
+\hypersetup{
+    colorlinks=true,breaklinks=true,
+    linkcolor=cornflowerblue,urlcolor=cornflowerblue,
+    anchorcolor=cornflowerblue,citecolor=cornflowerblue,
+    pdftitle={Yu Duan - Academic CV},pdfauthor={Yu Duan},
+    bookmarksopen=true
+}
+\setlength{\emergencystretch}{2em}
+\setlength{\LTpre}{0pt}
+\setlength{\LTpost}{0pt}
+\setlength{\bibitemsep}{0.4\baselineskip}
+% Nature's default driver omits electronic article numbers and suppresses
+% punctuation after misc titles; retain all supplied publication details.
+\DeclareFieldFormat[article]{eid}{#1}
+\DeclareFieldFormat[misc]{title}{\mkbibemph{#1}}
+\renewbibmacro*{note+pages}{%
+  \printfield{note}%
+  \setunit{\bibpagespunct}%
+  \iffieldundef{eid}{\printfield{pages}}{\printfield{eid}}%
+  \newunit}
+\AtBeginBibliography{\interlinepenalty=10000\relax}
+% Author annotations highlight Yu Duan without changing BibLaTeX name parsing.
+\renewcommand*{\mkbibnamefamily}[1]{\ifitemannotation{highlight}{\mkbibbold{#1}}{#1}}
+\renewcommand*{\mkbibnamegiven}[1]{\ifitemannotation{highlight}{\mkbibbold{#1}}{#1}}
+\newcommand{\cvsection}[2]{%
+    \Needspace{6\baselineskip}%
+    \pdfbookmark[1]{#1}{#2}%
+    \section*{#1}}
+\newcommand{\mytitle}[4]{%
+  \begin{center}
+    \Large\textbf{#1}\normalsize\\[4pt]
+    Ph.D. Student in Transportation Planning and Management\\[3pt]
+    #4\\[3pt]
+    \href{mailto:#2}{#2}\quad\textbar\quad\href{#3}{Google Scholar}
+  \end{center}}
+
+\begin{document}
+\mytitle{Yu Duan}{duanyu@bjtu.edu.cn}
+  {https://scholar.google.com/citations?user=pLcJk40AAAAJ}
+  {School of Traffic and Transportation\\Beijing Jiaotong University, Beijing, China}
+\RaggedRight
+
+\cvsection{Research Interests}{interests}
+\input{interests.tex}
+
+\cvsection{Education}{education}
+\input{education.tex}
+
+\cvsection{Peer-Reviewed Journal Articles}{journal-articles}
+\newrefcontext[labelprefix=J]
+\nocite{*}
+\printbibliography[type=article,heading=none,resetnumbers=true,keyword=J]
+
+\cvsection{Manuscripts Under Review}{under-review}
+\newrefcontext[labelprefix=W]
+\printbibliography[type=misc,heading=none,resetnumbers=true,keyword=R]
+\textit{Manuscripts available upon request.}
+
+\cvsection{Selected Research Contributions}{research}
+\input{exp_research.tex}
+
+\cvsection{Conference Presentation}{presentation}
+\newrefcontext[labelprefix=T]
+\printbibliography[type=misc,heading=none,resetnumbers=true,keyword=T]
+
+\cvsection{Teaching Experience}{teaching}
+\input{teaching.tex}
+
+\cvsection{Honors \& Awards}{awards}
+\input{awards.tex}
+
+\cvsection{Methods \& Computational Skills}{skills}
+\input{tools.tex}
+
+\begin{center}
+\rule{0.25\linewidth}{0.4pt}\\
+\medskip
+Last updated: October 26, 2026
+\end{center}
+\end{document}
