@@ -1,0 +1,62 @@
+% Yu Duan -- Research Summary, styled to match the root Academic CV.
+% Body preserved from my/RESEARCH_SUMMARY.tex (2026-10-26).
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{ragged2e}
+\usepackage{kpfonts}
+\usepackage[T1]{fontenc}
+\usepackage{xcolor}
+\definecolor{cornflowerblue}{HTML}{6495ed}
+\usepackage{hyperref}
+\usepackage{bookmark}
+\usepackage{needspace}
+\usepackage{titlesec}
+\urlstyle{same}
+\titlespacing*{\section}{0pt}{9pt}{4pt}
+\hypersetup{
+ colorlinks=true,breaklinks=true,
+ linkcolor=cornflowerblue,urlcolor=cornflowerblue,
+ anchorcolor=cornflowerblue,citecolor=cornflowerblue,
+ pdftitle={Yu Duan - Research Summary},pdfauthor={Yu Duan},bookmarksopen=true
+}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\setlength{\emergencystretch}{2em}
+\clubpenalty=10000
+\widowpenalty=10000
+
+\begin{document}
+\begin{center}
+ \Large\textbf{Yu Duan}\normalsize\\[3pt]
+ Research Summary\quad\textbar\quad Prospective Visiting Ph.D. Researcher\\[2pt]
+ School of Traffic and Transportation, Beijing Jiaotong University\\[2pt]
+ \href{mailto:duanyu@bjtu.edu.cn}{duanyu@bjtu.edu.cn}\quad\textbar\quad
+ \href{https://scholar.google.com/citations?user=pLcJk40AAAAJ}{Google Scholar}
+\end{center}
+\RaggedRight
+\begin{center}
+ \large\textbf{Research on Ride-Hailing Demand and Fleet Operations}
+\end{center}
+\vspace{-5pt}
+
+\section*{Research Background}
+My research has centered on ride-hailing systems, initially through demand prediction and travel-time inference and, more recently, through fleet rebalancing. These projects have given me experience in probabilistic modeling, machine learning, and constrained optimization. I am particularly interested in what happens after a prediction is made: how an operator uses available information to move a limited fleet, and how those decisions affect subsequent service.
+
+\section*{Previous Research}
+In a first-author paper in \emph{Information Sciences} (2026), I studied sparse ridesharing demand using a zero-inflated generalized Poisson model and multi-graph learning. In a \emph{Transportation Research Part C} paper (2026), I worked on joint probabilistic demand prediction across ride-sourcing services using noncrossing quantile estimates and a mixture-of-experts model. A separate first-author manuscript, revised after major revision and currently under review at \emph{Transportation Research Part C}, concerns network-wide travel-time inference from sparse, delayed trip records. I also contributed to an empirical \emph{Transportation Research Part A} (2026) paper on carpooling regulation.
+
+\section*{Current Research: Fleet Rebalancing}
+My first-author manuscript, \emph{Learning Operational Targets for Dynamic Fleet Rebalancing} (under review at \emph{Manufacturing \& Service Operations Management}), examines a distinction that I find important: predicting where trips will occur is not the same as deciding where to send vehicles. Repositioning costs money, removes supply from the origin, and may not improve service until the vehicle reaches its destination.
+
+
+I developed Operational Target Learning (OTL), which learns regional coverage targets from the downstream service and vehicle-reuse consequences of relocation decisions, while retaining a network-flow linear program for feasible vehicle dispatch. A central insight is that demand forecasts and operational targets serve different purposes: repositioning vehicles toward anticipated demand does not necessarily create operational value once origin-side capacity loss, relocation delays, and subsequent vehicle returns are taken into account. The study also reveals that policy rankings based on isolated decisions can differ from those observed under repeated operations, as each policy changes the future fleet states it encounters. These findings highlight the importance of accounting for intertemporal feedback and evaluating rebalancing policies through their closed-loop operational consequences.
+
+
+\section*{Questions I Would Like to Explore}
+My current rebalancing model assumes that the operator can dispatch every vehicle. I have recently been thinking about what might change if this were true for only part of the supply. On a platform with both robotaxis and human drivers, robotaxis may be centrally dispatched, but human drivers still choose whether and when to work. For example, could moving more robotaxis into a busy area change human drivers' earning opportunities and, in turn, the supply available later? I do not yet have a model for this interaction, but it is a question I would like to learn how to study.
+
+I also want to connect my earlier work on probabilistic prediction (on trip requests and travel time) more directly with fleet operations. A well-calibrated forecast is not necessarily the most useful input for dispatch. I would like to test when information about uncertainty changes a operation decision, and whether it improves service or social welfare.
+
+\medskip
+{\footnotesize Publications and manuscript status are detailed in my Academic CV. Full manuscripts under review are available upon request.}
+\end{document}

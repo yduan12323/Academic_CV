@@ -1,3 +1,4 @@
+% Full bibliography build: ./build.sh (pdfLaTeX + Biber + pdfLaTeX).
 % Academic CV for Yu Duan.
 % Adapted from Matthew DeVerna's 2024 CV template (based on Hause Lin's CV).
 % Content: my/Academic_CV.tex, supplied 2026-10-26.
@@ -19,7 +20,7 @@
 \usepackage{titlesec}
 \usepackage{enumitem}
 % Keep the template's heading typography; tighten only vertical spacing.
-\titlespacing*{\section}{0pt}{12pt}{6pt}
+\titlespacing*{\section}{0pt}{8pt}{4pt}
 \setlist[itemize]{leftmargin=1.3em,topsep=2pt,itemsep=4pt,parsep=0pt}
 \hypersetup{
     colorlinks=true,breaklinks=true,
@@ -31,7 +32,7 @@
 \setlength{\emergencystretch}{2em}
 \setlength{\LTpre}{0pt}
 \setlength{\LTpost}{0pt}
-\setlength{\bibitemsep}{0.4\baselineskip}
+\setlength{\bibitemsep}{0.25\baselineskip}
 % Nature's default driver omits electronic article numbers and suppresses
 % punctuation after misc titles; retain all supplied publication details.
 \DeclareFieldFormat[article]{eid}{#1}
@@ -51,9 +52,9 @@
     \section*{#1}}
 \newcommand{\mytitle}[4]{%
   \begin{center}
-    \Large\textbf{#1}\normalsize\\[4pt]
-    Ph.D. Student in Transportation Planning and Management\\[3pt]
-    #4\\[3pt]
+    \Large\textbf{#1}\normalsize\\[2pt]
+    Ph.D. Student in Transportation Planning and Management\\[1pt]
+    #4\\[1pt]
     \href{mailto:#2}{#2}\quad\textbar\quad\href{#3}{Google Scholar}
   \end{center}}
 
@@ -79,7 +80,10 @@
 \printbibliography[type=misc,heading=none,resetnumbers=true,keyword=R]
 \textit{Manuscripts available upon request.}
 
-\cvsection{Selected Research Contributions}{research}
+% Start the second page with research highlights, after both manuscripts.
+\clearpage
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+\cvsection{Research Highlights}{research}
 \input{exp_research.tex}
 
 \cvsection{Conference Presentation}{presentation}

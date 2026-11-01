@@ -1,5 +1,24 @@
 \begin{itemize}
-\item \textbf{Decision-aware fleet rebalancing:} Designed an operational-target learning framework that trains vehicle-coverage decisions using delayed service and vehicle-reuse outcomes; combined counterfactual replay with selected-basis LP sensitivity, preserving exact integer-feasible network-flow execution.
-\item \textbf{Probabilistic platform demand modeling:} Developed models for sparse and correlated ride-sourcing demand using zero-inflated count distributions and noncrossing multi-quantile forecasts; evaluated predictive accuracy and uncertainty calibration on operational trip data.
-\item \textbf{Transportation network inference:} Developed a closed-loop framework to infer network-wide origin--destination travel times from incomplete and delayed endpoint observations using low-rank representations, latent dynamics, and adaptive filtering.
+
+\item \textbf{Transportation inference from sparse observations.}
+Developed a latent-dynamics framework for network-wide
+travel-time inference from sparse and reporting-delayed
+trip records, combining low-rank representations with
+adaptive filtering to update estimates as new
+observations become available.
+
+\item \textbf{Probabilistic modeling of ride-hailing demand.}
+Studied sparse demand patterns and dependencies across
+ride-sourcing services through zero-inflated count models
+and joint noncrossing-quantile prediction, with an
+emphasis on characterizing predictive uncertainty.
+
+\item \textbf{Decision-focused fleet rebalancing.}
+Developed a learning framework that distinguishes
+predicting passenger demand from determining where
+vehicles should be repositioned. Regional coverage
+targets are learned from downstream service and
+vehicle-reuse consequences and implemented through
+network-flow optimization.
+
 \end{itemize}
